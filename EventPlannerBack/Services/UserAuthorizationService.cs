@@ -106,7 +106,7 @@ public class UserAuthorizationService(
                 {
                     user = result,
                     JWTToken = jwtTokenGenerator.GenerateJWTtoken(new Claim[]
-                        { new Claim(ClaimTypes.NameIdentifier, identification) }),
+                        { new Claim("username", result.Username), new Claim("email", result.Email), new Claim("userId", result.Id.ToString()) }),
                 }
             };
         }

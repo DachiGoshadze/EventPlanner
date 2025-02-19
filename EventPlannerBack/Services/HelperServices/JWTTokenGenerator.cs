@@ -2,6 +2,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using EventPlannerBack.Interfaces.Services;
+using EventPlannerBack.Models;
 
 namespace EventPlannerBack.Services.HelperServices
 {
@@ -18,7 +19,7 @@ namespace EventPlannerBack.Services.HelperServices
            signingCredentials: new SigningCredentials(AuthOptions.GetSymmetricSecurityKey(), SecurityAlgorithms.HmacSha256));
            return $"Bearer {new JwtSecurityTokenHandler().WriteToken(jwt)}";
         }
-        public ClaimsPrincipal GetClaimsFromToken(string token)
+        public UserModal GetClaimsFromToken(string token)
         {
             if (string.IsNullOrEmpty(token))
             {
@@ -29,9 +30,9 @@ namespace EventPlannerBack.Services.HelperServices
             {
                 var validationParameters = new TokenValidationParameters
                 {
-                    ValidateIssuer = false, 
-                    ValidateAudience = false, 
-                    ValidateLifetime = false,
+                    ValidateIssuer = true, 
+                    ValidateAudience = true, 
+                    ValidateLifetime = true,
                     IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey()
                 };
 
@@ -39,7 +40,13 @@ namespace EventPlannerBack.Services.HelperServices
 
                 var principal = tokenHandler.ValidateToken(token, validationParameters, out SecurityToken validatedToken);
 
-                return principal;
+
+                return new UserModal
+                {
+                    Id = int.Parse(principal.FindFirst("userId")!.Value),
+                    Username = principal.FindFirst("username")!.Value,
+                    Email = principal.FindFirst("email")!.Value,
+                };
             }
             catch (Exception ex)
             {

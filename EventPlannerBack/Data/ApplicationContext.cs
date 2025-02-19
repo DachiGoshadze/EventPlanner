@@ -7,6 +7,8 @@ namespace EventPlannerBack.Data
     {
         public DbSet<User> Users => Set<User>(); 
         public DbSet<AuthenticationCodes> AuthCodes => Set<AuthenticationCodes>(); 
+        public DbSet<Event> Events => Set<Event>();
+        public DbSet<EventsParticipantsQueue> eventsParticipantsQueue => Set<EventsParticipantsQueue>();
         public ApplicationContext(DbContextOptions<ApplicationContext> options)
            : base(options)
         {

@@ -59,11 +59,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
             ValidAudience = AuthOptions.AUDIENCE,
 
-            ValidateLifetime = true,
+            ValidateLifetime = false,
 
             IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey(),
 
-            ValidateIssuerSigningKey = true,
+            ValidateIssuerSigningKey = false,
         };
     });
 builder.Services.AddCors(options =>
@@ -74,12 +74,15 @@ builder.Services.AddCors(options =>
             policy.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader().AllowCredentials();
         });
 });
+builder.Services.AddHttpContextAccessor();
 builder.Services.Configure<GmailOptions>(builder.Configuration.GetSection(GmailOptions.GmailOptionsKey));
 builder.Services.AddScoped<IUserAuthorizationService,UserAuthorizationService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthCodesRepository, AuthCodesRepository>();
 builder.Services.AddScoped<IJWTTokenGenerator, JwtTokenGenerator>();
 builder.Services.AddScoped<IMailService, MailService>();
+builder.Services.AddScoped<IEventRepository, EventRepository>();
+builder.Services.AddScoped<IEventService, EventService>();
 var app = builder.Build();
 app.UseCors("_myAllowSpecificOrigins");
 app.UseStaticFiles();

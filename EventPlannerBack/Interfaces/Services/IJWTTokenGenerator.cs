@@ -1,9 +1,10 @@
 using System.Security.Claims;
+using EventPlannerBack.Models;
 
 namespace EventPlannerBack.Interfaces.Services;
 
 public interface IJWTTokenGenerator
 {
     string GenerateJWTtoken(IEnumerable<Claim> claims);
-    ClaimsPrincipal GetClaimsFromToken(string token);
+    UserModal GetClaimsFromToken(string token);
 }
