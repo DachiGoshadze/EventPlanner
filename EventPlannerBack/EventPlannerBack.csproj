@@ -37,4 +37,11 @@
       <_ContentIncludedByDefault Remove="Views\_ViewStart.cshtml" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Core.Application\Core.Application.csproj" />
+      <ProjectReference Include="..\Core.Domain\Core.Domain.csproj" />
+      <ProjectReference Include="..\infrastructure.MailService\infrastructure.MailService.csproj" />
+      <ProjectReference Include="..\infrastructure.Services\infrastructure.Services.csproj" />
+    </ItemGroup>
+
 </Project>

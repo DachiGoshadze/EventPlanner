@@ -1,6 +1,6 @@
-using EventPlannerBack.Interfaces.Services;
-using EventPlannerBack.Models;
-using EventPlannerBack.Services;
+using Application.Interfaces.Services;
+using Application.Models;
+using Application.Models.DTO.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EventPlannerBack.Controllers;

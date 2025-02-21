@@ -1,10 +1,6 @@
-using EventPlannerBack.Interfaces.Repositories;
-using EventPlannerBack.Interfaces.Services;
-using EventPlannerBack.Models;
-using EventPlannerBack.Models.DTO.Events;
-using EventPlannerBack.Services;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http.HttpResults;
+using Application.Interfaces.Services;
+using Application.Models;
+using Application.Models.DTO.Events;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EventPlannerBack.Controllers;
