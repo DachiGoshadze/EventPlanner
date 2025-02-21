@@ -3,7 +3,7 @@ using EventPlannerBack.Interfaces.Repositories;
 using EventPlannerBack.Interfaces.Services;
 using EventPlannerBack.Models;
 using EventPlannerBack.Models.DTO.Events;
-using OfficeOpenXml;
+using ClosedXML.Excel;
 
 namespace EventPlannerBack.Services;
 
@@ -26,29 +26,9 @@ public class EventService(IEventRepository eventRepository) : IEventService
         });
         if (eventId < 0)
             return response;
-        
-        List<string> emails = new List<string>();
-        using (var stream = new MemoryStream())
-        {
-            await createEventRequestDto.EventParticipantEmails.CopyToAsync(stream);
-            using (var package = new ExcelPackage(stream))
-            {
-                ExcelWorksheet worksheet = package.Workbook.Worksheets[0]; 
 
-                if (worksheet == null)
-                    return response;
-
-                int rowCount = worksheet.Dimension?.Rows ?? 0;
-
-                for (int row = 1; row <= rowCount; row++)
-                {
-                    var cellValue = worksheet.Cells[row, 1].Text; 
-                    if (!string.IsNullOrEmpty(cellValue))
-                        emails.Add(cellValue);
-                }
-            }
-        }
-        var result = await eventRepository.AddEventParticipantsAsync(eventId, createEventRequestDto.EventDescription, emails);
+        var result = await AddEventParticipantsAsync(createEventRequestDto.EventParticipantEmails, eventId,
+            createEventRequestDto.EventDescription);
         if (!result) return response;
         return new ResponseViewModel<CreateEventResponseDTO>()
         {
@@ -58,6 +38,13 @@ public class EventService(IEventRepository eventRepository) : IEventService
         };
     }
 
+    public async Task<bool> AddEventParticipantsAsync(IFormFile file, int eventId, string message)
+    {
+        using var workbook = new XLWorkbook(file.OpenReadStream());
+        var worksheet = workbook.Worksheet(1);
+        var emails = worksheet.Column("A").CellsUsed().Skip(1).Select(cell => cell.GetValue<string>()).ToList();
+        return await eventRepository.AddEventParticipantsAsync(eventId, message, emails);
+    }
     public async Task<ResponseViewModel<EventInfoResponseDTO>> GetEventInfoAsync(int eventId)
     {
         var eventInfo = await eventRepository.GetEventAsync(eventId);

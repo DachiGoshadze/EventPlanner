@@ -83,6 +83,7 @@ builder.Services.AddScoped<IJWTTokenGenerator, JwtTokenGenerator>();
 builder.Services.AddScoped<IMailService, MailService>();
 builder.Services.AddScoped<IEventRepository, EventRepository>();
 builder.Services.AddScoped<IEventService, EventService>();
+builder.Services.AddScoped<IUserService, UserService>();
 var app = builder.Build();
 app.UseCors("_myAllowSpecificOrigins");
 app.UseStaticFiles();

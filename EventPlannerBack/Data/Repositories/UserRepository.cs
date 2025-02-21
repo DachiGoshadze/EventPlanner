@@ -48,4 +48,23 @@ public class UserRepository(ApplicationContext context) : IUserRepository
             return false;
         }
     }
+
+    public async Task<UserModal?> GetUserInfo(int userId)
+    {
+        try
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(x => x.id == userId);
+            if (user == null) return null;
+            return new UserModal()
+            {
+                Id = user.id,
+                Username = user.username,
+                Email = user.email,
+            };
+        }
+        catch
+        {
+            return null;
+        }
+    }
 }

@@ -4,20 +4,50 @@ using EventPlannerBack.Models;
 using EventPlannerBack.Models.DTO.Events;
 using EventPlannerBack.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EventPlannerBack.Controllers;
 
 [Microsoft.AspNetCore.Components.Route("api/[controller]")]
 [ApiController]
-[Authorize]
-public class EventController(IEventService service, IJWTTokenGenerator tokenGenerator, IHttpContextAccessor _httpContextAccessor)
+public class EventController(IEventService service, IJWTTokenGenerator tokenGenerator, IUserService userService)
 {
     [HttpPost("[action]")]
     public async Task<ResponseViewModel<CreateEventResponseDTO>> CreateEvent([FromForm]  CreateEventRequestDTO request )
     {
-        var user = tokenGenerator.GetClaimsFromToken(_httpContextAccessor.HttpContext!.Request.Headers["Authorization"].ToString());
-        return await service.CreateEventAsync(request, user);
+        try
+        {
+            var user = await userService.GetUserDefaultInfoAsync(request.UserId);
+            return await service.CreateEventAsync(request, user);
+        }
+        catch (Exception ex)
+        {
+            return new ResponseViewModel<CreateEventResponseDTO>()
+            {
+                Code = -1,
+                Message = ex.Message,
+            };
+        }
+    }
+    [HttpPut("[action]")]
+    public async Task<bool> AddParticipentsToEvent([FromForm]  AddParticipentsRequestDTO request)
+    {
+        try
+        {
+            var res = await service.AddEventParticipantsAsync(request.file, request.EventId, request.Message);
+            if (res)
+            {
+                return true;
+            }
+
+            return false;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            return false;
+        }
     }
     
     [HttpPost("[action]")]

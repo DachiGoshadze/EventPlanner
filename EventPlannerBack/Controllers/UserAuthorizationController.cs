@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace EventPlannerBack.Controllers;
 
 [Microsoft.AspNetCore.Components.Route("api/[controller]")]
+[ApiController]
 public class UserAuthorizationController(IUserAuthorizationService service)
 {
     [HttpPost("[action]")]

@@ -46,9 +46,17 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.105.0-rc, )"
+            },
             "EPPlus": {
               "target": "Package",
               "version": "[8.0.0-beta, )"
+            },
+            "IronXL.Excel": {
+              "target": "Package",
+              "version": "[2025.2.5, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",

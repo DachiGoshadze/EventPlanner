@@ -47,6 +47,84 @@
           }
         }
       },
+      "BitMiracle.LibTiff.NET/2.4.649": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/BitMiracle.LibTiff.NET.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/BitMiracle.LibTiff.NET.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "ClosedXML/0.105.0-rc": {
+        "type": "package",
+        "dependencies": {
+          "ClosedXML.Parser": "2.0.0-preview1",
+          "DocumentFormat.OpenXml": "[3.1.1, 4.0.0)",
+          "ExcelNumberFormat": "1.1.0",
+          "RBush.Signed": "4.0.0",
+          "SixLabors.Fonts": "1.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/ClosedXML.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/ClosedXML.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "ClosedXML.Parser/2.0.0-preview1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/ClosedXML.Parser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/ClosedXML.Parser.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DocumentFormat.OpenXml/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "DocumentFormat.OpenXml.Framework": "3.1.1"
+        },
+        "compile": {
+          "lib/net8.0/DocumentFormat.OpenXml.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/DocumentFormat.OpenXml.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DocumentFormat.OpenXml.Framework/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.Packaging": "8.0.1"
+        },
+        "compile": {
+          "lib/net8.0/DocumentFormat.OpenXml.Framework.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/DocumentFormat.OpenXml.Framework.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "EPPlus/8.0.0-beta": {
         "type": "package",
         "dependencies": {
@@ -77,6 +155,19 @@
           "lib/net8.0/EPPlus.Interfaces.dll": {}
         }
       },
+      "ExcelNumberFormat/1.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/ExcelNumberFormat.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/ExcelNumberFormat.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -87,6 +178,82 @@
         "runtime": {
           "lib/net6.0/Humanizer.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "IronSoftware.Common/2024.11.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Binder": "6.0.1",
+          "Microsoft.Extensions.Configuration.Json": "6.0.1",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.4",
+          "System.Configuration.ConfigurationManager": "6.0.2",
+          "System.Memory": "4.5.5"
+        },
+        "compile": {
+          "lib/netstandard2.0/IronSoftware.Logger.dll": {
+            "related": ".pdb"
+          },
+          "lib/netstandard2.0/IronSoftware.Shared.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IronSoftware.Logger.dll": {
+            "related": ".pdb"
+          },
+          "lib/netstandard2.0/IronSoftware.Shared.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "IronSoftware.Drawing.Abstractions/2024.11.8": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IronSoftware.Drawing.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IronSoftware.Drawing.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "IronSoftware.System.Drawing/2025.1.6": {
+        "type": "package",
+        "dependencies": {
+          "BitMiracle.LibTiff.NET": "2.4.649",
+          "IronSoftware.Drawing.Abstractions": "2024.11.8",
+          "SixLabors.ImageSharp": "3.1.5",
+          "SixLabors.ImageSharp.Drawing": "2.1.4",
+          "System.Memory": "4.5.5"
+        },
+        "compile": {
+          "lib/net60/IronSoftware.Drawing.Common.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net60/IronSoftware.Drawing.Common.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        }
+      },
+      "IronXL.Excel/2025.2.5": {
+        "type": "package",
+        "dependencies": {
+          "IronSoftware.Common": "2024.11.4",
+          "IronSoftware.System.Drawing": "2025.1.6"
+        },
+        "compile": {
+          "lib/netstandard2.1/IronXL.dll": {
+            "related": ".dll.config;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/IronXL.dll": {
+            "related": ".dll.config;.xml"
           }
         }
       },
@@ -731,6 +898,22 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
+      "Microsoft.Extensions.Configuration.Binder/6.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration.FileExtensions/9.0.1": {
         "type": "package",
         "dependencies": {
@@ -1136,7 +1319,7 @@
       "Microsoft.Win32.SystemEvents/6.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/_._": {
+          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
           }
         },
@@ -1179,6 +1362,65 @@
         },
         "runtime": {
           "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "RBush.Signed/4.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/RBush.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/RBush.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SixLabors.Fonts/2.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/SixLabors.Fonts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/SixLabors.Fonts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SixLabors.ImageSharp/3.1.5": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/SixLabors.ImageSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/SixLabors.ImageSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/SixLabors.ImageSharp.props": {}
+        }
+      },
+      "SixLabors.ImageSharp.Drawing/2.1.4": {
+        "type": "package",
+        "dependencies": {
+          "SixLabors.Fonts": "2.0.4",
+          "SixLabors.ImageSharp": "3.1.5"
+        },
+        "compile": {
+          "lib/net6.0/SixLabors.ImageSharp.Drawing.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/SixLabors.ImageSharp.Drawing.dll": {
             "related": ".xml"
           }
         }
@@ -1406,14 +1648,14 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "System.Configuration.ConfigurationManager/6.0.1": {
+      "System.Configuration.ConfigurationManager/6.0.2": {
         "type": "package",
         "dependencies": {
           "System.Security.Cryptography.ProtectedData": "6.0.0",
-          "System.Security.Permissions": "6.0.0"
+          "System.Security.Permissions": "6.0.1"
         },
         "compile": {
-          "lib/net6.0/_._": {
+          "lib/net6.0/System.Configuration.ConfigurationManager.dll": {
             "related": ".xml"
           }
         },
@@ -1455,7 +1697,7 @@
           "Microsoft.Win32.SystemEvents": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/_._": {
+          "lib/net6.0/System.Drawing.Common.dll": {
             "related": ".xml"
           }
         },
@@ -1511,6 +1753,22 @@
           }
         }
       },
+      "System.IO.Packaging/8.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.IO.Packaging.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.IO.Packaging.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
       "System.IO.Pipelines/9.0.2": {
         "type": "package",
         "compile": {
@@ -1527,7 +1785,7 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "System.Memory/4.5.4": {
+      "System.Memory/4.5.5": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.1/_._": {}
@@ -1622,28 +1880,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "System.Security.AccessControl/6.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/_._": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/System.Security.AccessControl.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/net6.0/System.Security.AccessControl.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
-      },
       "System.Security.Cryptography.Cng/5.0.0": {
         "type": "package",
         "dependencies": {
@@ -1734,14 +1970,13 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "System.Security.Permissions/6.0.0": {
+      "System.Security.Permissions/6.0.1": {
         "type": "package",
         "dependencies": {
-          "System.Security.AccessControl": "6.0.0",
           "System.Windows.Extensions": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/_._": {
+          "lib/net6.0/System.Security.Permissions.dll": {
             "related": ".xml"
           }
         },
@@ -1872,7 +2107,7 @@
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/_._": {
+          "lib/net6.0/System.Windows.Extensions.dll": {
             "related": ".xml"
           }
         },
@@ -1929,6 +2164,103 @@
         "lib/netstandard2.0/Azure.Identity.xml"
       ]
     },
+    "BitMiracle.LibTiff.NET/2.4.649": {
+      "sha512": "XCEdfCphKo0UAvSg1h/OzOFWtjkIGnPMAziYkNqV7NVrqb/tZJTBxJhxIEX7gpvQwg8GIRYt133SUncfkKfjLA==",
+      "type": "package",
+      "path": "bitmiracle.libtiff.net/2.4.649",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bitmiracle.libtiff.net.2.4.649.nupkg.sha512",
+        "bitmiracle.libtiff.net.nuspec",
+        "lib/net40/BitMiracle.LibTiff.NET.dll",
+        "lib/net40/BitMiracle.LibTiff.NET.xml",
+        "lib/netstandard2.0/BitMiracle.LibTiff.NET.dll",
+        "lib/netstandard2.0/BitMiracle.LibTiff.NET.xml"
+      ]
+    },
+    "ClosedXML/0.105.0-rc": {
+      "sha512": "yY/T5acNTUEUikO0FMmIcYY5RJtAyeK7ect27pyVyDg8baeNsj+nL74LUz0nOzrOZ5OdywaxSv6aWns31UjUuQ==",
+      "type": "package",
+      "path": "closedxml/0.105.0-rc",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "closedxml.0.105.0-rc.nupkg.sha512",
+        "closedxml.nuspec",
+        "lib/netstandard2.0/ClosedXML.dll",
+        "lib/netstandard2.0/ClosedXML.pdb",
+        "lib/netstandard2.0/ClosedXML.xml",
+        "lib/netstandard2.1/ClosedXML.dll",
+        "lib/netstandard2.1/ClosedXML.pdb",
+        "lib/netstandard2.1/ClosedXML.xml",
+        "nuget-logo.png"
+      ]
+    },
+    "ClosedXML.Parser/2.0.0-preview1": {
+      "sha512": "ZsLGza+Ek89ygM/tixMb9YVRrT/fAz3mvevhHvESnZrmGiUODGc+aYxAt+854SdgkFHK/nfSlCui+df38wLjUQ==",
+      "type": "package",
+      "path": "closedxml.parser/2.0.0-preview1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "closedxml.parser.2.0.0-preview1.nupkg.sha512",
+        "closedxml.parser.nuspec",
+        "lib/netstandard2.0/ClosedXML.Parser.dll",
+        "lib/netstandard2.0/ClosedXML.Parser.xml",
+        "lib/netstandard2.1/ClosedXML.Parser.dll",
+        "lib/netstandard2.1/ClosedXML.Parser.xml"
+      ]
+    },
+    "DocumentFormat.OpenXml/3.1.1": {
+      "sha512": "2z9QBzeTLNNKWM9SaOSDMegfQk/7hDuElOsmF77pKZMkFRP/GHA/W/4yOAQD9kn15N/FsFxHn3QVYkatuZghiA==",
+      "type": "package",
+      "path": "documentformat.openxml/3.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "documentformat.openxml.3.1.1.nupkg.sha512",
+        "documentformat.openxml.nuspec",
+        "icon.png",
+        "lib/net35/DocumentFormat.OpenXml.dll",
+        "lib/net35/DocumentFormat.OpenXml.xml",
+        "lib/net40/DocumentFormat.OpenXml.dll",
+        "lib/net40/DocumentFormat.OpenXml.xml",
+        "lib/net46/DocumentFormat.OpenXml.dll",
+        "lib/net46/DocumentFormat.OpenXml.xml",
+        "lib/net8.0/DocumentFormat.OpenXml.dll",
+        "lib/net8.0/DocumentFormat.OpenXml.xml",
+        "lib/netstandard2.0/DocumentFormat.OpenXml.dll",
+        "lib/netstandard2.0/DocumentFormat.OpenXml.xml"
+      ]
+    },
+    "DocumentFormat.OpenXml.Framework/3.1.1": {
+      "sha512": "6APEp/ElZV58S/4v8mf4Ke3ONEDORs64MqdD64Z7wWpcHANB9oovQsGIwtqjnKihulOj7T0a6IxHIHOfMqKOng==",
+      "type": "package",
+      "path": "documentformat.openxml.framework/3.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "documentformat.openxml.framework.3.1.1.nupkg.sha512",
+        "documentformat.openxml.framework.nuspec",
+        "icon.png",
+        "lib/net35/DocumentFormat.OpenXml.Framework.dll",
+        "lib/net35/DocumentFormat.OpenXml.Framework.xml",
+        "lib/net40/DocumentFormat.OpenXml.Framework.dll",
+        "lib/net40/DocumentFormat.OpenXml.Framework.xml",
+        "lib/net46/DocumentFormat.OpenXml.Framework.dll",
+        "lib/net46/DocumentFormat.OpenXml.Framework.xml",
+        "lib/net6.0/DocumentFormat.OpenXml.Framework.dll",
+        "lib/net6.0/DocumentFormat.OpenXml.Framework.xml",
+        "lib/net8.0/DocumentFormat.OpenXml.Framework.dll",
+        "lib/net8.0/DocumentFormat.OpenXml.Framework.xml",
+        "lib/netstandard2.0/DocumentFormat.OpenXml.Framework.dll",
+        "lib/netstandard2.0/DocumentFormat.OpenXml.Framework.xml"
+      ]
+    },
     "EPPlus/8.0.0-beta": {
       "sha512": "Wf2YOjp3q0YdkTszvvS0AThZ7DV+R121cKUd3j8RTL6xjq9x2MOr3/tJVOxySvTkiuuDC3+pWfarP2p4OKfI+w==",
       "type": "package",
@@ -1976,6 +2308,24 @@
         "readme.md"
       ]
     },
+    "ExcelNumberFormat/1.1.0": {
+      "sha512": "R3BVHPs9O+RkExbZYTGT0+9HLbi8ZrNij1Yziyw6znd3J7P3uoIR07uwTLGOogtz1p6+0sna66eBoXu7tBiVQA==",
+      "type": "package",
+      "path": "excelnumberformat/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "excelnumberformat.1.1.0.nupkg.sha512",
+        "excelnumberformat.nuspec",
+        "icon.png",
+        "lib/net20/ExcelNumberFormat.dll",
+        "lib/net20/ExcelNumberFormat.xml",
+        "lib/netstandard1.0/ExcelNumberFormat.dll",
+        "lib/netstandard1.0/ExcelNumberFormat.xml",
+        "lib/netstandard2.0/ExcelNumberFormat.dll",
+        "lib/netstandard2.0/ExcelNumberFormat.xml"
+      ]
+    },
     "Humanizer.Core/2.14.1": {
       "sha512": "lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "type": "package",
@@ -1992,6 +2342,83 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "IronSoftware.Common/2024.11.4": {
+      "sha512": "eJYY6n+bLwj0XkLub7y5lwo1enRdEzmm0b0DctCGsdkT9Zo54nT2dtXvriI67+6/Ybus1HluHpCv7wRpxYA/vQ==",
+      "type": "package",
+      "path": "ironsoftware.common/2024.11.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "docs/README.md",
+        "images/iron-logo-128.png",
+        "ironsoftware.common.2024.11.4.nupkg.sha512",
+        "ironsoftware.common.nuspec",
+        "lib/netstandard2.0/IronSoftware.Logger.dll",
+        "lib/netstandard2.0/IronSoftware.Logger.pdb",
+        "lib/netstandard2.0/IronSoftware.Shared.dll",
+        "lib/netstandard2.0/IronSoftware.Shared.pdb"
+      ]
+    },
+    "IronSoftware.Drawing.Abstractions/2024.11.8": {
+      "sha512": "3zjdfdaNojNk7LPH+3X8REcgw5PP4NxPLarTkPxFSm+FenOZDFtbDxoL0qH3NbWl3LsiSMMJj1OW7zfuAeBHfQ==",
+      "type": "package",
+      "path": "ironsoftware.drawing.abstractions/2024.11.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "docs/README.md",
+        "images/iron-logo-128.png",
+        "ironsoftware.drawing.abstractions.2024.11.8.nupkg.sha512",
+        "ironsoftware.drawing.abstractions.nuspec",
+        "lib/netstandard2.0/IronSoftware.Drawing.Abstractions.dll",
+        "lib/netstandard2.0/IronSoftware.Drawing.Abstractions.pdb"
+      ]
+    },
+    "IronSoftware.System.Drawing/2025.1.6": {
+      "sha512": "fTczd/cM8mTadwDuMxIC4b34okzyjm+Wp1yrDFv7ukWuwV8IaDqfF3Wnjh+IP0h/7gVFXqMAChMXSc8HkR4CYA==",
+      "type": "package",
+      "path": "ironsoftware.system.drawing/2025.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.txt",
+        "docs/README.md",
+        "images/ironsoftware-logo.png",
+        "ironsoftware.system.drawing.2025.1.6.nupkg.sha512",
+        "ironsoftware.system.drawing.nuspec",
+        "lib/net60/IronSoftware.Drawing.Common.deps.json",
+        "lib/net60/IronSoftware.Drawing.Common.dll",
+        "lib/net60/IronSoftware.Drawing.Common.pdb",
+        "lib/net60/IronSoftware.Drawing.Common.xml",
+        "lib/netstandard2.0/IronSoftware.Drawing.Common.deps.json",
+        "lib/netstandard2.0/IronSoftware.Drawing.Common.dll",
+        "lib/netstandard2.0/IronSoftware.Drawing.Common.pdb",
+        "lib/netstandard2.0/IronSoftware.Drawing.Common.xml"
+      ]
+    },
+    "IronXL.Excel/2025.2.5": {
+      "sha512": "8fBGdYkn2TJaZlx1m72nwRc30Q6kU9HNo24LFnpB1/D5T9x2/+XiDHLoOuvZz1IpY34vWFFuVjS9J8lj/k7Atg==",
+      "type": "package",
+      "path": "ironxl.excel/2025.2.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "EULA.txt",
+        "docs/README.md",
+        "images/iron-logo-128.png",
+        "ironxl.excel.2025.2.5.nupkg.sha512",
+        "ironxl.excel.nuspec",
+        "lib/netstandard2.0/IronXL.dll",
+        "lib/netstandard2.0/IronXL.dll.config",
+        "lib/netstandard2.0/IronXL.xml",
+        "lib/netstandard2.1/IronXL.dll",
+        "lib/netstandard2.1/IronXL.dll.config",
+        "lib/netstandard2.1/IronXL.xml",
+        "readme-setup.txt",
+        "readme.txt"
       ]
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.0": {
@@ -3324,6 +3751,25 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Microsoft.Extensions.Configuration.Binder/6.0.1": {
+      "sha512": "akSVfaHcxSSlSjC/dVpHbPLDHvYd/l/x0dlp2v+9zQVtSaSH3BIfO8AXvGgDEN/VPCCGeHigfflqkH3v6+RI4Q==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration.binder/6.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/net461/Microsoft.Extensions.Configuration.Binder.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.xml",
+        "microsoft.extensions.configuration.binder.6.0.1.nupkg.sha512",
+        "microsoft.extensions.configuration.binder.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "Microsoft.Extensions.Configuration.FileExtensions/9.0.1": {
       "sha512": "QBOI8YVAyKqeshYOyxSe6co22oag431vxMu5xQe1EjXMkYE4xK4J71xLCW3/bWKmr9Aoy1VqGUARSLFnotk4Bg==",
       "type": "package",
@@ -4030,6 +4476,70 @@
         "packageIcon.png"
       ]
     },
+    "RBush.Signed/4.0.0": {
+      "sha512": "aP5KQxL5RnFNGW1f0euYVBfCatkLw5iEzMRJcXKq8LWWP4Cp3+qoSq1tDDL2vvJ2rM0ychmVMa2VaEKLS6uX4w==",
+      "type": "package",
+      "path": "rbush.signed/4.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net47/RBush.dll",
+        "lib/net47/RBush.xml",
+        "lib/net8.0/RBush.dll",
+        "lib/net8.0/RBush.xml",
+        "lib/netstandard2.0/RBush.dll",
+        "lib/netstandard2.0/RBush.xml",
+        "rbush.signed.4.0.0.nupkg.sha512",
+        "rbush.signed.nuspec",
+        "readme.md"
+      ]
+    },
+    "SixLabors.Fonts/2.0.4": {
+      "sha512": "4+NKz8W36injp98lmmM07ncp08HAK8c6FZz8vLoKxRPfJeEVWpBHlLYEbQa5rcqKKYqxUv/RVCrb8XcPhfMKUQ==",
+      "type": "package",
+      "path": "sixlabors.fonts/2.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/net6.0/SixLabors.Fonts.dll",
+        "lib/net6.0/SixLabors.Fonts.xml",
+        "sixlabors.fonts.128.png",
+        "sixlabors.fonts.2.0.4.nupkg.sha512",
+        "sixlabors.fonts.nuspec"
+      ]
+    },
+    "SixLabors.ImageSharp/3.1.5": {
+      "sha512": "lNtlq7dSI/QEbYey+A0xn48z5w4XHSffF8222cC4F4YwTXfEImuiBavQcWjr49LThT/pRmtWJRcqA/PlL+eJ6g==",
+      "type": "package",
+      "path": "sixlabors.imagesharp/3.1.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "build/SixLabors.ImageSharp.props",
+        "lib/net6.0/SixLabors.ImageSharp.dll",
+        "lib/net6.0/SixLabors.ImageSharp.xml",
+        "sixlabors.imagesharp.128.png",
+        "sixlabors.imagesharp.3.1.5.nupkg.sha512",
+        "sixlabors.imagesharp.nuspec"
+      ]
+    },
+    "SixLabors.ImageSharp.Drawing/2.1.4": {
+      "sha512": "p4VwtAABggDUhUS5zXldCZHVGfjJl76+SrBHY4biNQ8+890igFK6RL87qIv9GqvEjMcYOar1sPkf2iMQ6uq9/g==",
+      "type": "package",
+      "path": "sixlabors.imagesharp.drawing/2.1.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/net6.0/SixLabors.ImageSharp.Drawing.dll",
+        "lib/net6.0/SixLabors.ImageSharp.Drawing.xml",
+        "sixlabors.imagesharp.drawing.128.png",
+        "sixlabors.imagesharp.drawing.2.1.4.nupkg.sha512",
+        "sixlabors.imagesharp.drawing.nuspec"
+      ]
+    },
     "Swashbuckle.AspNetCore.Swagger/7.2.0": {
       "sha512": "y27fNDfIh1vGhJjXYynLcZjl7DLOW1bSO2MDsY9wB4Zm1fdxpPsuBSiR4U+0acWlAqLmnuOPKr/OeOgwRUkBlw==",
       "type": "package",
@@ -4418,10 +4928,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Configuration.ConfigurationManager/6.0.1": {
-      "sha512": "jXw9MlUu/kRfEU0WyTptAVueupqIeE3/rl0EZDMlf8pcvJnitQ8HeVEp69rZdaStXwTV72boi/Bhw8lOeO+U2w==",
+    "System.Configuration.ConfigurationManager/6.0.2": {
+      "sha512": "LtqgY79MRntWIM0AeQf4uj1mGyqpVhR7O9N1+UODQu/EGQwRTERqMqpYTeedE7VTK2ngoCtxzAaTn9gRDa+6Qw==",
       "type": "package",
-      "path": "system.configuration.configurationmanager/6.0.1",
+      "path": "system.configuration.configurationmanager/6.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4438,7 +4948,7 @@
         "lib/netstandard2.0/System.Configuration.ConfigurationManager.xml",
         "runtimes/win/lib/net461/System.Configuration.ConfigurationManager.dll",
         "runtimes/win/lib/net461/System.Configuration.ConfigurationManager.xml",
-        "system.configuration.configurationmanager.6.0.1.nupkg.sha512",
+        "system.configuration.configurationmanager.6.0.2.nupkg.sha512",
         "system.configuration.configurationmanager.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -4565,6 +5075,35 @@
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
+    "System.IO.Packaging/8.0.1": {
+      "sha512": "KYkIOAvPexQOLDxPO2g0BVoWInnQhPpkFzRqvNrNrMhVT6kqhVr0zEb6KCHlptLFukxnZrjuMVAnxK7pOGUYrw==",
+      "type": "package",
+      "path": "system.io.packaging/8.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.IO.Packaging.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.IO.Packaging.targets",
+        "lib/net462/System.IO.Packaging.dll",
+        "lib/net462/System.IO.Packaging.xml",
+        "lib/net6.0/System.IO.Packaging.dll",
+        "lib/net6.0/System.IO.Packaging.xml",
+        "lib/net7.0/System.IO.Packaging.dll",
+        "lib/net7.0/System.IO.Packaging.xml",
+        "lib/net8.0/System.IO.Packaging.dll",
+        "lib/net8.0/System.IO.Packaging.xml",
+        "lib/netstandard2.0/System.IO.Packaging.dll",
+        "lib/netstandard2.0/System.IO.Packaging.xml",
+        "system.io.packaging.8.0.1.nupkg.sha512",
+        "system.io.packaging.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "System.IO.Pipelines/9.0.2": {
       "sha512": "UIBaK7c/A3FyQxmX/747xw4rCUkm1BhNiVU617U5jweNJssNjLJkPUGhBsrlDG0BpKWCYKsncD+Kqpy4KmvZZQ==",
       "type": "package",
@@ -4593,10 +5132,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Memory/4.5.4": {
-      "sha512": "1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
+    "System.Memory/4.5.5": {
+      "sha512": "XIWiDvKPXaTveaB7HVganDlOCRoj03l+jrwNvcge/t8vhGYKvqV+dMv6G4SAX2NoNmN0wZfVPTAlFwZcZvVOUw==",
       "type": "package",
-      "path": "system.memory/4.5.4",
+      "path": "system.memory/4.5.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4610,7 +5149,7 @@
         "lib/netstandard2.0/System.Memory.dll",
         "lib/netstandard2.0/System.Memory.xml",
         "ref/netcoreapp2.1/_._",
-        "system.memory.4.5.4.nupkg.sha512",
+        "system.memory.4.5.5.nupkg.sha512",
         "system.memory.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -4768,35 +5307,6 @@
         "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
         "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
         "system.runtime.compilerservices.unsafe.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "System.Security.AccessControl/6.0.0": {
-      "sha512": "AUADIc0LIEQe7MzC+I0cl0rAT8RrTAKFHl53yHjEUzNVIaUlhFY11vc2ebiVJzVBuOzun6F7FBA+8KAbGTTedQ==",
-      "type": "package",
-      "path": "system.security.accesscontrol/6.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/netcoreapp2.0/System.Security.AccessControl.targets",
-        "buildTransitive/netcoreapp3.1/_._",
-        "lib/net461/System.Security.AccessControl.dll",
-        "lib/net461/System.Security.AccessControl.xml",
-        "lib/net6.0/System.Security.AccessControl.dll",
-        "lib/net6.0/System.Security.AccessControl.xml",
-        "lib/netstandard2.0/System.Security.AccessControl.dll",
-        "lib/netstandard2.0/System.Security.AccessControl.xml",
-        "runtimes/win/lib/net461/System.Security.AccessControl.dll",
-        "runtimes/win/lib/net461/System.Security.AccessControl.xml",
-        "runtimes/win/lib/net6.0/System.Security.AccessControl.dll",
-        "runtimes/win/lib/net6.0/System.Security.AccessControl.xml",
-        "runtimes/win/lib/netstandard2.0/System.Security.AccessControl.dll",
-        "runtimes/win/lib/netstandard2.0/System.Security.AccessControl.xml",
-        "system.security.accesscontrol.6.0.0.nupkg.sha512",
-        "system.security.accesscontrol.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
@@ -4976,10 +5486,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Security.Permissions/6.0.0": {
-      "sha512": "T/uuc7AklkDoxmcJ7LGkyX1CcSviZuLCa4jg3PekfJ7SU0niF0IVTXwUiNVP9DSpzou2PpxJ+eNY2IfDM90ZCg==",
+    "System.Security.Permissions/6.0.1": {
+      "sha512": "QufGNXopGXxdXbkDn87hta4ajdNKNI3a1+HoJbKkmBbMtYPhEgEJKSiPZHGjI0zQpgZ7gi5L0gSV3PeewKRtew==",
       "type": "package",
-      "path": "system.security.permissions/6.0.0",
+      "path": "system.security.permissions/6.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -5000,7 +5510,7 @@
         "lib/netstandard2.0/System.Security.Permissions.xml",
         "runtimes/win/lib/net461/System.Security.Permissions.dll",
         "runtimes/win/lib/net461/System.Security.Permissions.xml",
-        "system.security.permissions.6.0.0.nupkg.sha512",
+        "system.security.permissions.6.0.1.nupkg.sha512",
         "system.security.permissions.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -5293,7 +5803,9 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "ClosedXML >= 0.105.0-rc",
       "EPPlus >= 8.0.0-beta",
+      "IronXL.Excel >= 2025.2.5",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.0",
       "Microsoft.EntityFrameworkCore >= 9.0.2",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.2",
@@ -5350,9 +5862,17 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "ClosedXML": {
+            "target": "Package",
+            "version": "[0.105.0-rc, )"
+          },
           "EPPlus": {
             "target": "Package",
             "version": "[8.0.0-beta, )"
+          },
+          "IronXL.Excel": {
+            "target": "Package",
+            "version": "[2025.2.5, )"
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
