@@ -7,5 +7,5 @@ public class EventInfoResponseDTO
     public string EventDescription { get; set; }
     public DateTime EventStartDate { get; set; }
     public DateTime EventEndDate { get; set; }
-    public ICollection<EventParticipantViewModel> EventParticipants { get; set; } = new List<EventParticipantViewModel>();
+    public int EventParticipantsCount { get; set; }
 }

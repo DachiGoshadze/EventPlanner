@@ -2,6 +2,7 @@ using Application.Interfaces.Services;
 using Application.Models;
 using Application.Models.DTO.Events;
 using Microsoft.AspNetCore.Mvc;
+using Task = DocumentFormat.OpenXml.Office2021.DocumentTasks.Task;
 
 namespace EventPlannerBack.Controllers;
 
@@ -46,9 +47,16 @@ public class EventController(IEventService service, IJWTTokenGenerator tokenGene
         }
     }
     
-    [HttpPost("[action]")]
-    public async Task<ResponseViewModel<EventInfoResponseDTO>> GetEventInfo ([FromBody]  EventInfoRequestDTO request )
+    [HttpGet("[action]")]
+    public async Task<ResponseViewModel<EventInfoResponseDTO>> GetEventInfo ([FromQuery]  EventInfoRequestDTO request )
     {
         return await service.GetEventInfoAsync(request.EventId);
+    }
+
+    [HttpGet("[action]")]
+    public async Task<ResponseViewModel<GetUserEventsInfoResponseDTO>> GetUserEventsInfo(
+        [FromQuery] GetUserEventsInfoRequestDTO request)
+    {
+        return await service.GetUserEventsInfoAsync(request.UserId);
     }
 }

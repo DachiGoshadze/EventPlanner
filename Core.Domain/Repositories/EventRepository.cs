@@ -82,4 +82,32 @@ public class EventRepository(ApplicationContext applicationContext) : IEventRepo
             return false;
         }
     }
+
+    public async Task<List<EventModal>?> GetUserEventsAsync(int id)
+    {
+        try
+        {
+            var userEvents = await applicationContext.Events.Where(x => x.UserId == id).Select(x => new EventModal()
+            {
+                id = x.id,
+                eventName = x.eventName,
+                eventDescription = x.eventDescription,
+                startDate = x.startDate,
+                endDate = x.endDate,
+                participantsQueue = x.participantsQueue.Select(t => new EventsParticipantsQueueModal()
+                {
+                    EventId = t.EventId,
+                    Id = t.Id,
+                    Message = t.Message,
+                    ParticipantEmail = t.ParticipantEmail,
+                    SendStatus = t.SendStatus
+                }).ToList(),
+            }).ToListAsync();
+            return userEvents;
+        }
+        catch (Exception)
+        {
+            return null;
+        }
+    }
 }

@@ -68,12 +68,37 @@ public class EventService(IEventRepository eventRepository) : IEventService
                 EventDescription = eventInfo.eventDescription,
                 EventStartDate = eventInfo.startDate,
                 EventEndDate = eventInfo.endDate,
-                EventParticipants = eventInfo.participantsQueue.Select(x => new EventParticipantViewModel()
+                EventParticipantsCount = eventInfo.participantsQueue.Count
+            }
+        };
+    }
+
+    public async Task<ResponseViewModel<GetUserEventsInfoResponseDTO>> GetUserEventsInfoAsync(int userId)
+    {
+        var eventsInfo = await eventRepository.GetUserEventsAsync(userId);
+
+        if (eventsInfo == null)
+        {
+            return new ResponseViewModel<GetUserEventsInfoResponseDTO>()
+            {
+                Code = -1,
+                Message = "Something went wrong"
+            };
+        }
+
+        return new ResponseViewModel<GetUserEventsInfoResponseDTO>()
+        {
+            Code = 0,
+            Data = new GetUserEventsInfoResponseDTO()
+            {
+                EventInfos = eventsInfo.Select(x => new EventInfoResponseDTO
                 {
-                    eventId = x.EventId,
-                    id = x.Id,
-                    participantEmail = x.ParticipantEmail,
-                    status = x.SendStatus
+                    EventId = x.id,
+                    EventName = x.eventName,
+                    EventDescription = x.eventDescription,
+                    EventStartDate = x.startDate,
+                    EventEndDate = x.endDate,
+                    EventParticipantsCount = x.participantsQueue.Count
                 }).ToList()
             }
         };
